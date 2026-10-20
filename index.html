@@ -3,17 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drill 1</title>
+    <title>Drill 2</title>
     <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
     <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
 
 </head>
 <body>
 
-    <h1>Sets</h1>
+    <div id="output">
+    <form id="ClubMembersCheck">
+    <h2>Check Club Membership</h2>
+        <label for="name">First Name:</label>
+        <br>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+        <label for="surname">Last Name:</label>
+        <br>
+        <input type="text" id="surname" name="surname" required>
+        <br><br>
+        <button type="submit">Check Membership</button>
+    </form>
+    </div>
 
-    <div id="div1"></div>
-    <div id="div2"></div>
+    <div id="confirmed-members">
+        <h2>Confirmed Members</h2>
+        <ul id="confirmed-members-list"></ul>
+
+
     <script type="py" src="main.py"></script>
     
 </body>
