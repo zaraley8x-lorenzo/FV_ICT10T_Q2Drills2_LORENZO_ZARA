@@ -7,11 +7,9 @@
 
     <title>Club Membership System</title>
 
-    <!-- PyScript -->
     <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
     <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
 
-    <!-- CSS Styling -->
     <style>
         body {
             background-color: #e8eee5;
@@ -103,44 +101,20 @@
         <h1>Writing Club Membership</h1>
         <p class="subtitle">Add a new member to the student club!</p>
 
-        <!-- Form for adding members -->
         <form id="ClubMembersCheck" py-submit="add_member">
-
-            <!-- First name -->
             <label for="name">First Name</label>
-            <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter first name"
-                required
-            >
-
+            <input type="text" id="name" name="name" placeholder="Enter first name" required>
             <br><br>
-
-            <!-- Last name -->
             <label for="surname">Last Name</label>
-            <input
-                type="text"
-                id="surname"
-                name="surname"
-                placeholder="Enter last name"
-                required
-            >
-
+            <input type="text"id="surname" name="surname" placeholder="Enter last name" required>
             <br><br>
-
-            <!-- Submit button -->
             <button type="submit">Add Member</button>
-
         </form>
 
-        <!-- Displays members after submitting -->
         <div id="confirmed-members"></div>
 
     </div>
 
-    <!-- Python file -->
     <script type="py" src="main.py"></script>
 
 </body>
