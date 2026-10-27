@@ -1,36 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drill 2</title>
+
+    <title>Club Membership System</title>
+
+    <!-- PyScript -->
     <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css">
     <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
 
+    <!-- CSS Styling -->
+    <style>
+        body {
+            background-color: #e8eee5;
+            font-family: Arial, sans-serif;
+            color: #344a3b;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            background-color: white;
+            max-width: 550px;
+            margin: 40px auto;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #00000015;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 26px;
+            color: #42664d;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #788a7b;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #cbd8cb;
+            border-radius: 8px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: 2px solid #92b49a;
+        }
+
+        button {
+            width: 100%;
+            background-color: #628b6d;
+            color: white;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4b7255;
+        }
+
+        #confirmed-members {
+            background-color: #f1f6ef;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 10px;
+            line-height: 1.8;
+        }
+
+        #confirmed-members:empty {
+            display: none;
+        }
+
+        #confirmed-members h3 {
+            color: #42664d;
+            margin-top: 0;
+        }
+    </style>
 </head>
+
 <body>
 
-    <div id="output">
-    <form id="ClubMembersCheck">
-    <h2>Check Club Membership</h2>
-        <label for="name">First Name:</label>
-        <br>
-        <input type="text" id="name" name="name" required>
-        <br><br>
-        <label for="surname">Last Name:</label>
-        <br>
-        <input type="text" id="surname" name="surname" required>
-        <br><br>
-        <button type="submit">Check Membership</button>
-    </form>
+    <div class="container">
+
+        <h1>Writing Club Membership</h1>
+        <p class="subtitle">Add a new member to the student club!</p>
+
+        <!-- Form for adding members -->
+        <form id="ClubMembersCheck" py-submit="add_member">
+
+            <!-- First name -->
+            <label for="name">First Name</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter first name"
+                required
+            >
+
+            <br><br>
+
+            <!-- Last name -->
+            <label for="surname">Last Name</label>
+            <input
+                type="text"
+                id="surname"
+                name="surname"
+                placeholder="Enter last name"
+                required
+            >
+
+            <br><br>
+
+            <!-- Submit button -->
+            <button type="submit">Add Member</button>
+
+        </form>
+
+        <!-- Displays members after submitting -->
+        <div id="confirmed-members"></div>
+
     </div>
 
-    <div id="confirmed-members">
-        <h2>Confirmed Members</h2>
-        <ul id="confirmed-members-list"></ul>
-
-
+    <!-- Python file -->
     <script type="py" src="main.py"></script>
-    
+
 </body>
 </html>
